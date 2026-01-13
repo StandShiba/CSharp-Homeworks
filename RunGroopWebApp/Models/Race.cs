@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using RunGroopWebApp.Data.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RunGroopWebApp.Models
 {
-    public class Races
+    public class Race
     {
         [Key]
         public int Id { get; set; }
