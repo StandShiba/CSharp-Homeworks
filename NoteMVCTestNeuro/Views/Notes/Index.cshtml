@@ -1,0 +1,33 @@
+﻿@model List<NoteMVCTestNeuro.Models.Note>
+
+@{
+    ViewData["Title"] = "Notes";
+}
+
+<h1>Notes</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create new</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Updated (UTC)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td>@n.Title</td>
+                <td>@n.UpdatedUtc.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@n.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
